@@ -15,11 +15,14 @@ private:
 public:
     Juego();
     void mostrar_tablero();
-    bool vereficar_arriba(int i, int j);
-    bool vereficar_abajo(int i, int j);
-    bool vereficar_derecha(int i, int j);
-    bool vereficar_izquierda(int i, int j);
-
+    bool verificar_arriba(int i, int j);
+    bool verificar_abajo(int i, int j);
+    bool verificar_derecha(int i, int j);
+    bool verificar_izquierda(int i, int j);
+    bool verificar_digDerAr(int i, int j);
+    bool verificar_digDerAb(int i, int j);
+    bool verificar_digIzqAr(int i, int j);
+    bool verificar_digIzqAb(int i, int j);
 };
 
 #endif // JUEGO_H

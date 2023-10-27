@@ -36,7 +36,7 @@ void Juego::mostrar_tablero(){
     }
 }
 
-bool Juego::vereficar_arriba(int i, int j){
+bool Juego::verificar_arriba(int i, int j){
     if (tablero[i-1][j] == 32 || tablero[i-1][j] == turno){
         return false;
     }
@@ -53,7 +53,7 @@ bool Juego::vereficar_arriba(int i, int j){
     return false;
 }
 
-bool Juego::vereficar_abajo(int i, int j){
+bool Juego::verificar_abajo(int i, int j){
     if (tablero[i+1][j] == 32 || tablero[i+1][j] == turno){
         return false;
     }
@@ -70,7 +70,7 @@ bool Juego::vereficar_abajo(int i, int j){
     return false;
 }
 
-bool Juego::vereficar_derecha(int i, int j){
+bool Juego::verificar_derecha(int i, int j){
     if (tablero[i][j+1] == 32 || tablero[i][j+1] == turno){
         return false;
     }
@@ -87,7 +87,7 @@ bool Juego::vereficar_derecha(int i, int j){
     return false;
 }
 
-bool Juego::vereficar_izquierda(int i, int j){
+bool Juego::verificar_izquierda(int i, int j){
     if (tablero[i][j-1] == 32 || tablero[i][j-1] == turno){
         return false;
     }
@@ -100,6 +100,82 @@ bool Juego::vereficar_izquierda(int i, int j){
             cout << i << "-" << n << endl;
             return true;
         }
+    }
+    return false;
+}
+
+bool Juego::verificar_digDerAr(int i, int j){
+    if (tablero[i-1][j+1] == 32 || tablero[i-1][j+1] == turno){
+        return false;
+    }
+    int x = i-2;
+    for (int n = j+2 ; n < 8 ; n++){
+        if ((tablero[x][n] != 32 && tablero[x][n] != turno) && tablero[x][n-1] == turno){
+            return false;
+        }
+        else if (tablero[x][n] == 32){
+            // movimiento posible n-j
+            cout << x << "-" << n << endl;
+            return true;
+        }
+        x--;
+    }
+    return false;
+}
+
+bool Juego::verificar_digDerAb(int i, int j){
+    if (tablero[i+1][j+1] == 32 || tablero[i+1][j+1] == turno){
+        return false;
+    }
+    int x = i+2;
+    for (int n = j+2 ; n < 8 ; n++){
+        if ((tablero[x][n] != 32 && tablero[x][n] != turno) && tablero[x][n-1] == turno){
+            return false;
+        }
+        else if (tablero[x][n] == 32){
+            // movimiento posible n-j
+            cout << x << "-" << n << endl;
+            return true;
+        }
+        x++;
+    }
+    return false;
+}
+
+bool Juego::verificar_digIzqAr(int i, int j){
+    if (tablero[i-1][j-1] == 32 || tablero[i-1][j-1] == turno){
+        return false;
+    }
+    int x = i-2;
+    for (int n = j-2 ; n >= 0 ; n--){
+        if ((tablero[x][n] != 32 && tablero[x][n] != turno) && tablero[x][n-1] == turno){
+            return false;
+        }
+        else if (tablero[x][n] == 32){
+            // movimiento posible n-j
+            cout << x << "-" << n << endl;
+            return true;
+        }
+        x--;
+    }
+    return false;
+}
+
+bool Juego::verificar_digIzqAb(int i, int j){
+    if (tablero[i+1][j-1] == 32 || tablero[i+1][j-1] == turno){
+        return false;
+    }
+    int x = i+2;
+    for (int n = j-2 ; n >= 0 ; n--){
+        if ((tablero[x][n] != 32 && tablero[x][n] != turno) && tablero[x][n-1] == turno){
+            return false;
+        }
+        else if (tablero[x][n] == 32){
+            // movimiento posible n-j
+            cout << x << "-" << n << endl;
+            return true;
+        }
+        x++;
     }
     return false;
 }
