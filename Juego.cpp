@@ -447,16 +447,24 @@ void Juego::movimiento(){
 
 void Juego::jugar(){
     //Aqui tengo parte del menu y que permite interacrtuar con el juego como tal
+    int control= 1;
     cout << "\nIngrese el nombre del jugador 1(-): ";
     cin >> jugador_1;
     cout << "Ingrese el nombre del jugador 2(*): ";
     cin >> jugador_2;
-    while(f_negras + f_blancas <= 64){
+    while(control != 0){
         mostrar_tablero();
         cout << "\nFichas del jugardor " << jugador_1 << ": " << f_negras << "\nFichas del jugador " << jugador_2 << ": " << f_blancas << endl;
         if(turno == 45) cout << "Turno del jugador " << jugador_1 << endl;
         else if(turno == 42) cout << "Turno del jugador " << jugador_2 << endl;
-        movimiento();
+
+        cout << "\n1. Desea realizar un movimiento\n"
+                "2. Finalizar el juego\n"
+                "Ingrese lo que desea ejecutar: ";
+        cin >> control;
+        if(control == 1 && f_negras + f_blancas < 64)movimiento();
+        else if(control == 2 || f_negras == 0 || f_blancas == 0) control = 0;
+
         if(turno == 45) turno = 42;
         else if(turno == 42) turno = 45;
     }
@@ -500,7 +508,7 @@ string Juego::leer_archivo(string nombre){
         tamano = archivo.tellg();
         archivo.seekg(0);
         for (unsigned long long i = 0 ; i < tamano ; i++){
-            informacion.push_back(archivo.get());
+            informacion1.push_back(archivo.get());
         }
 
     }
@@ -513,7 +521,8 @@ void Juego::mostrar_historial(){
     informacion = leer_archivo("../Registros.txt");
     cout << "\nSe mostrara el historia de las partidas en el fomato...\n"
             "Jugador 1, Jugador 2, fecha, hora, ganador, numero de fichas\n"
-            "Partidas:\n" << informacion;
+            "Partidas:\n";
+    cout << informacion;
 }
 
 Juego::~Juego(){
