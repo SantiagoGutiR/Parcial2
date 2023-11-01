@@ -304,17 +304,17 @@ void Juego::movimiento(){
                 if (verificar_derecha(i,j) == false &&
                     verificar_digDerAb(i,j) == false &&
                     verificar_abajo(i,j) == false) cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_derecha(i,j);
-                verificar_digDerAb(i,j);
-                verificar_abajo(i,j);
+                else{verificar_derecha(i,j);
+                    verificar_digDerAb(i,j);
+                    verificar_abajo(i,j);}
             }
             else if(j==7){
                 if (verificar_izquierda(i,j) == false &&
                     verificar_digIzqAb(i,j) == false &&
                     verificar_abajo(i,j) == false) cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_izquierda(i,j);
-                verificar_digIzqAb(i,j);
-                verificar_abajo(i,j);
+                else{verificar_izquierda(i,j);
+                    verificar_digIzqAb(i,j);
+                    verificar_abajo(i,j);}
             }
             else{
                 if(verificar_izquierda(i,j) == false &&
@@ -322,11 +322,11 @@ void Juego::movimiento(){
                     verificar_abajo(i,j) == false &&
                     verificar_digDerAb(i,j) == false &&
                     verificar_derecha(i,j) == false)cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_izquierda(i,j);
-                verificar_digIzqAb(i,j);
-                verificar_abajo(i,j);
-                verificar_digDerAb(i,j);
-                verificar_derecha(i,j);
+                else{verificar_izquierda(i,j);
+                    verificar_digIzqAb(i,j);
+                    verificar_abajo(i,j);
+                    verificar_digDerAb(i,j);
+                    verificar_derecha(i,j);}
             }
         }
         //Restriccion de la fila inferior
@@ -335,17 +335,17 @@ void Juego::movimiento(){
                 if (verificar_derecha(i,j) == false &&
                     verificar_digDerAr(i,j) == false &&
                     verificar_arriba(i,j) == false)cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_derecha(i,j);
-                verificar_digDerAr(i,j);
-                verificar_arriba(i,j);
+                else{verificar_derecha(i,j);
+                    verificar_digDerAr(i,j);
+                    verificar_arriba(i,j);}
             }
             else if(j==7){
                 if(verificar_izquierda(i,j) == false &&
                     verificar_digIzqAr(i,j) == false &&
                     verificar_arriba(i,j) == false)cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_izquierda(i,j);
-                verificar_digIzqAr(i,j);
-                verificar_arriba(i,j);
+                else{verificar_izquierda(i,j);
+                    verificar_digIzqAr(i,j);
+                    verificar_arriba(i,j);}
             }
             else{
                 if(verificar_izquierda(i,j) == false &&
@@ -353,11 +353,11 @@ void Juego::movimiento(){
                     verificar_arriba(i,j) == false &&
                     verificar_digDerAr(i,j) == false &&
                     verificar_derecha(i,j) == false)cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_izquierda(i,j);
-                verificar_digIzqAr(i,j);
-                verificar_arriba(i,j);
-                verificar_digDerAr(i,j);
-                verificar_derecha(i,j);
+                else{verificar_izquierda(i,j);
+                    verificar_digIzqAr(i,j);
+                    verificar_arriba(i,j);
+                    verificar_digDerAr(i,j);
+                    verificar_derecha(i,j);}
             }
         }
         //Restriccion de la primera columna
@@ -366,17 +366,17 @@ void Juego::movimiento(){
                 if(verificar_derecha(i,j) == false &&
                     verificar_digDerAb(i,j) == false &&
                     verificar_abajo(i,j) == false)cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_derecha(i,j);
-                verificar_digDerAb(i,j);
-                verificar_abajo(i,j);
+                else{verificar_derecha(i,j);
+                    verificar_digDerAb(i,j);
+                    verificar_abajo(i,j);}
             }
             else if(i==7){
                 if(verificar_derecha(i,j) == false &&
                     verificar_digDerAr(i,j) == false &&
                     verificar_arriba(i,j) == false)cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_derecha(i,j);
-                verificar_digDerAr(i,j);
-                verificar_arriba(i,j);
+                else{verificar_derecha(i,j);
+                    verificar_digDerAr(i,j);
+                    verificar_arriba(i,j);}
             }
             else{
                 if(verificar_arriba(i,j) == false &&
@@ -384,11 +384,11 @@ void Juego::movimiento(){
                     verificar_derecha(i,j) == false &&
                     verificar_digDerAb(i,j) == false &&
                     verificar_abajo(i,j) == false)cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_arriba(i,j);
-                verificar_digDerAr(i,j);
-                verificar_derecha(i,j);
-                verificar_digDerAb(i,j);
-                verificar_abajo(i,j);
+                else{verificar_arriba(i,j);
+                    verificar_digDerAr(i,j);
+                    verificar_derecha(i,j);
+                    verificar_digDerAb(i,j);
+                    verificar_abajo(i,j);}
             }
         }
         //Restriccion de la ultima columna
@@ -397,17 +397,17 @@ void Juego::movimiento(){
                 if(verificar_izquierda(i,j) == false &&
                     verificar_digIzqAb(i,j) == false &&
                     verificar_abajo(i,j) == false)cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_izquierda(i,j);
-                verificar_digIzqAb(i,j);
-                verificar_abajo(i,j);
+                else{verificar_izquierda(i,j);
+                    verificar_digIzqAb(i,j);
+                    verificar_abajo(i,j);}
             }
             else if(i==7){
                 if(verificar_izquierda(i,j) == false &&
                     verificar_digIzqAr(i,j) == false &&
                     verificar_arriba(i,j) == false)cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_izquierda(i,j);
-                verificar_digIzqAr(i,j);
-                verificar_arriba(i,j);
+                else{verificar_izquierda(i,j);
+                    verificar_digIzqAr(i,j);
+                    verificar_arriba(i,j);}
             }
             else{
                 if(verificar_arriba(i,j) == false &&
@@ -415,11 +415,11 @@ void Juego::movimiento(){
                     verificar_izquierda(i,j) == false &&
                     verificar_digIzqAb(i,j) == false &&
                     verificar_abajo(i,j) == false)cout << "\nMovimiento invalido...\nPasas de turno...\n";
-                verificar_arriba(i,j);
-                verificar_digIzqAr(i,j);
-                verificar_izquierda(i,j);
-                verificar_digIzqAb(i,j);
-                verificar_abajo(i,j);
+                else{verificar_arriba(i,j);
+                    verificar_digIzqAr(i,j);
+                    verificar_izquierda(i,j);
+                    verificar_digIzqAb(i,j);
+                    verificar_abajo(i,j);}
             }
         }
         //Interior del cuadro
@@ -432,14 +432,14 @@ void Juego::movimiento(){
                 verificar_digDerAb(i,j) == false &&
                 verificar_derecha(i,j) == false &&
                 verificar_digDerAr(i,j) == false)cout << "\nMovimiento invalido...\nPasas de turno...\n";
-            verificar_arriba(i,j);
-            verificar_digIzqAr(i,j);
-            verificar_izquierda(i,j);
-            verificar_digIzqAb(i,j);
-            verificar_abajo(i,j);
-            verificar_digDerAb(i,j);
-            verificar_derecha(i,j);
-            verificar_digDerAr(i,j);
+            else{verificar_arriba(i,j);
+                verificar_digIzqAr(i,j);
+                verificar_izquierda(i,j);
+                verificar_digIzqAb(i,j);
+                verificar_abajo(i,j);
+                verificar_digDerAb(i,j);
+                verificar_derecha(i,j);
+                verificar_digDerAr(i,j);}
         }
     }
     else cout << "Movimiento invalido\nPasas de turno\n";
